@@ -2,28 +2,28 @@ body{
 
 	font-family: "Univers";
 	font-weight: 400;
-// 	font-size:;
+	font-size: 4.5vw;
 // 	line-height: ;
 // 	margin:;
 
-
-
 }
 
-
+p{
+	margin:0;
+}
 
 a{
-text-decoration: none;
+	text-decoration: none;
 }
 
 .type--large{
 	font-weight:700;
 }
 
-// .container{
-// 	height:;
-// 	width:;
-// }
+.container{
+	margin: 4.5vw;
+	overflow: hidden;
+}
 
 // .container__main{
 // }
