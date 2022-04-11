@@ -1,7 +1,7 @@
 <template>
-    <button class="button button--back">
+	<ul>
 
-	</button>
+	</ul>
 </template>
 
 
@@ -9,7 +9,7 @@
 
 export default {
 
-	Name: 'backButton',
+	Name: 'stepListNumber',
     //DATA = Variables statiques définies dans le composant
 	props:{
 
