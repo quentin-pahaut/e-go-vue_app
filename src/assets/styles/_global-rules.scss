@@ -2,43 +2,92 @@ body{
 
 	font-family: "Univers";
 	font-weight: 400;
-	font-size: 4.5vw;
-// 	line-height: ;
+	font-size: 16px;
+	line-height: 1.6;
+
+	overflow: hidden;
+
 // 	margin:;
 
-}
-
-p{
-	margin:0;
 }
 
 a{
 	text-decoration: none;
 }
 
-.type--large{
+p{
+	margin:0;
+}
+.my-friend-br{
+	display:block;
+}
+
+.txt--large{
 	font-weight:700;
 }
-
-.container{
-	margin: 4.5vw;
-	overflow: hidden;
+.txt--right{
+	text-align: right;
 }
 
-// .container__main{
-// }
+.title{
+	margin:0;
+	font-size: 13vw;
+	font-weight:700;
+	line-height: 0.7;
+}
 
-// .wrapper{
-// }
 
-// .section{
-// }
 
-// .section--header{
-// }
+.container{
 
-// .title{
-// }
+	width:100vw;
+	height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	&__header{
+
+		display: grid;
+
+
+		&--intro{
+			width: 91vw;
+			grid-template-columns: 9fr 3fr;
+			position: absolute;
+			bottom:4.5vw;
+			right:4.5vw;
+			transform: translateY(calc(100% + 4.5vh));
+		}
+	}
+	.container__main{
+
+		&--intro{
+			height:100%;
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+}
+
+
+
+.section{
+	width: 91vw;
+
+	&--illustration{
+		width:100%;
+		padding-bottom: 100%;
+		background-color: black;
+	}
+
+	&--journey{
+		margin : auto 4.5vw;
+	}
+}
+
 
 ul{
 	list-style: none;

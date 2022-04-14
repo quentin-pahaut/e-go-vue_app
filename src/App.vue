@@ -1,12 +1,9 @@
 <template>
-	<div class="container">
-		<router-view/>
-	</div>
+	<router-view/>
 </template>
 
 <style lang="scss">
 // #app {
 
 // }
-
 </style>

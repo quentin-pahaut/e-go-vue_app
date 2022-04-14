@@ -1,0 +1,17 @@
+@keyframes whole-baseline-animation{
+	from{
+		transform: translateY(calc(100% + 4.5vh));
+	}
+	to { 
+		transform: translateY(0%); 
+	}	
+}
+
+@keyframes intro-illu-animation{
+	from{
+		transform: translateY(calc(100% + 4.5vh));
+	}
+	to { 
+		transform: translateY(0%); 
+	}	
+}
