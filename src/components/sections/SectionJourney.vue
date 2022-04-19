@@ -1,12 +1,12 @@
 <template>
-	<section class="section section--journey">
-		<ul class="journey">
-			<li class="journey__el journey__el--counted"><span class="txt--large">I</span> can get&nbsp;on the&nbsp;bike.</li>
-			<li class="journey__el journey__el--counted"><span class="txt--large">I</span> can authorise the use of <span class="txt--large">my</span> image.</li>
-			<li class="journey__el journey__el--counted"><span class="txt--large">I</span> can do <span class="txt--large">my</span>&nbsp;Selfie.</li>
-			<li class="journey__el journey__el--counted"><span class="txt--large">I</span> can pedal to send <span class="txt--large">my</span>&nbsp;selfie.</li>
-			<li class="journey__el journey__el--uncounted"><span class="txt--large">I</span> pedal again and again ...</li>
-			<li class="journey__el journey__el--counted"><span class="txt--large">I</span> want to get some height</li>
+	<section class="section section--journey" v-if="journeyStep == 5" >
+		<ul class="journey" >
+			<li class="journey__el journey__el--counted"><span class="journey__el-content"><span class="txt--large">I</span> can get&nbsp;on the&nbsp;bike.</span></li>
+			<li class="journey__el journey__el--counted"><span class="journey__el-content"><span class="txt--large">I</span> can authorise the use of <span class="txt--large">my</span> image.</span></li>
+			<li class="journey__el journey__el--counted"><span class="journey__el-content"><span class="txt--large">I</span> can do <span class="txt--large">my</span>&nbsp;Selfie.</span></li>
+			<li class="journey__el journey__el--counted"><span class="journey__el-content"><span class="txt--large">I</span> can pedal to send <span class="txt--large">my</span>&nbsp;selfie.</span></li>
+			<li class="journey__el journey__el--uncounted"><span class="journey__el-content"><span class="txt--large">I</span> pedal again and again ...</span></li>
+			<li class="journey__el journey__el--counted"><span class="journey__el-content"><span class="txt--large">I</span> want to get some height</span></li>
 		</ul>
 	</section>
 </template>
@@ -15,9 +15,14 @@
 export default {
 
 	Name: 'SectionJourney',
-	//DATA = Variables statiques définies dans le composant
+
+	props:{
+		journeyStep: Number
+	},
+	
 	data(){
 		return {
+			// animationStep: 1
 		}
 	},
 
@@ -29,55 +34,134 @@ export default {
 
 
 .journey{
-
+	counter-reset: counted-el;
 
 	display:grid;
-	grid-template-columns:  1fr 3fr 1fr 3fr 1fr 3fr;
+	grid-template-columns:  4fr 4fr 4fr;
 	row-gap: 4.5vw;
 
-		@for $i from 1 through 6 {
-			@if $i == 1 or $i == 4 {
-				
-				& :nth-child(#{$i}){
-					grid-column: 2;
-				}
+	overflow: hidden;
 
-			} @else if $i == 2 or $i == 5 {
-				
-				& :nth-child(#{$i}){
-					grid-column: 4;
-				}
-
-			} @else {
-
-				& :nth-child(#{$i}){
-					grid-column: 6;
-				}	
-					
+	@for $i from 1 through 6 {
+		@if $i == 1 or $i == 4 {
+			
+			& :nth-child(#{$i}){
+				grid-column: 1 ;
 			}
+
+		} @else if $i == 2 or $i == 5 {
+			
+			& :nth-child(#{$i}){
+				grid-column: 2;
+			}
+
+		} @else {
+
+			& :nth-child(#{$i}){
+				grid-column: 3;
+			}	
 				
 		}
-	overflow: hidden;
+			
+	}
+	
+	
 	
 	&__el{
 
-		transform: translateX(0vw);
+		counter-increment: counted-el;
 
-		&::marker{
+		&> &-content{
+			padding-left: 29px;
+			position: relative;
+
+			&::before{
 			font-weight: 700;
-		}
-
-		&--counted{
-			counter-increment: counted-el;
-			list-style-type: decimal;
-			&:last-child{
-				list-style-type: "5. " 
+			position: absolute;
+			left:8px;
 			}
 		}
 
+		&--counted{
+
+			&> .journey__el-content{
+				
+				&::before{
+					content: counter(counted-el) ". ";
+				}
+			}
+
+			&:last-child{
+
+				& .journey__el-content{
+				
+					&::before{
+						content: "5. " ;
+					}
+
+				}
+
+			}
+
+		}
+
 		&--uncounted{
-			list-style-type: "... ";
+			&> .journey__el-content{
+				
+				&::before{
+					content: "... ";
+				}
+			}
+			
+		}
+	}
+
+
+
+	&__el{
+		display: block;
+		overflow: hidden;
+
+		&-content{
+			display: block;
+			// transform: translateX(100%);
+		}
+
+	}
+	
+//ANIM
+	
+
+@for $j from 1 through 6 {
+
+	$delay-coeficient: $j+$j;
+
+	& :nth-child(#{$j}) > &__el-content{
+
+		animation: journey-horizontal-slide 2s ease-out #{$delay-coeficient}s  both;
+
+		@if $j == 1{
+			animation: journey-horizontal-slide 2s ease-out #{$delay-coeficient}s  both
+
+
+
+		}@else{
+
+			$delay: $delay-coeficient + $j ;
+
+			animation: journey-horizontal-slide 2s ease-out #{$delay}s  both
+			
 		}
 	}
 }
+	
+
+
+}
+
+
+		
+
+
+
 </style>

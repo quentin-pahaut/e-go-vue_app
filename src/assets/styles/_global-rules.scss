@@ -25,6 +25,9 @@ p{
 .txt--large{
 	font-weight:700;
 }
+.txt--xlarge{
+	font-size: 4.8vw;
+}
 .txt--right{
 	text-align: right;
 }
@@ -58,7 +61,7 @@ p{
 			position: absolute;
 			bottom:4.5vw;
 			right:4.5vw;
-			transform: translateY(calc(100% + 4.5vh));
+			// transform: translateY(calc(100% + 4.5vh));
 		}
 	}
 	.container__main{
@@ -78,9 +81,10 @@ p{
 	width: 91vw;
 
 	&--illustration{
-		width:100%;
-		padding-bottom: 100%;
-		background-color: black;
+		// width:100vw;
+		height:91vw;
+		overflow: hidden;
+		margin : 4.5vw 4.5vw 0 4.5vw;
 	}
 
 	&--journey{
