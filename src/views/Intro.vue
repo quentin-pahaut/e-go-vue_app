@@ -1,8 +1,8 @@
 <template>
-		<SectionBaseline :baselineAnimStep="AnimationStep"/>
+		<SectionBaseline :baselineAnimStep="animationStep"/>
 		<main class="container__main container__main--intro">
-			<SectionIllustration :shapesIlluStep="AnimationStep"/>
-			<SectionJourney :journeyStep="AnimationStep"/>
+			<SectionIllustration :shapesIlluStep="animationStep"/>
+			<SectionJourney :journeyStep="animationStep"/>
 		</main>
 </template>
 
@@ -25,12 +25,29 @@ export default {
 
 	data(){
 		return {
-			AnimationStep:5,
-			AnimationEnd:false
-
+			animationStep:1,
+			animationEnd:false,
+			test:0
 		}
 	},
 
+	mounted(){
+		this.IntroAnimation()
+	},
+
+	methods: {
+
+		IntroAnimation : function(){
+			setTimeout (()=>{
+
+				this.animationStep++
+
+				if (this.animationStep < 5 ){
+					this.IntroAnimation()
+				}
+			}, 4000)
+		}
+	}
 }
 </script>
 

@@ -134,20 +134,19 @@ export default {
 
 @for $j from 1 through 6 {
 
-	$delay-coeficient: $j+$j;
+	$delay: $j*4;
 
 	& :nth-child(#{$j}) > &__el-content{
 
-		animation: journey-horizontal-slide 2s ease-out #{$delay-coeficient}s  both;
 
 		@if $j == 1{
-			animation: journey-horizontal-slide 2s ease-out #{$delay-coeficient}s  both
+			animation: journey-horizontal-slide 2s ease-out 2s  both
 
+		}@else if $j == 2{
 
-
+			animation: journey-horizontal-slide 2s ease-out 6s  both
+			
 		}@else{
-
-			$delay: $delay-coeficient + $j ;
 
 			animation: journey-horizontal-slide 2s ease-out #{$delay}s  both
 			

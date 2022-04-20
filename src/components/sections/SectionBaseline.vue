@@ -58,14 +58,14 @@ export default {
 	}
 
 	&[baseline-anim-step="1"]{
-		animation: whole-baseline-animation normal 1s ease-out forwards;  
+		animation: whole-baseline-animation normal 2s ease-out forwards;  
 	}
 
 	&[baseline-anim-step="2"]{
 		transform: translateY(0%); 
 	
 		.baseline__el--1{
-			animation: action-baseline-animation-show 2s ease-out forwards;
+			animation: action-baseline-animation-show 3s ease-out forwards;
 		}
 	}
 
@@ -73,10 +73,10 @@ export default {
 		transform: translateY(0%); 
 	
 		.baseline__el--1{
-			animation: action-baseline-animation-hide 2s ease-out forwards;
+			animation: action-baseline-animation-hide 3s ease-out forwards;
 		}
 		.baseline__el--2{
-			animation: action-baseline-animation-show 2s ease-out forwards;
+			animation: action-baseline-animation-show 3s ease-out forwards;
 		}
 	}
 
@@ -84,14 +84,14 @@ export default {
 		transform: translateY(0%); 
 	
 		.baseline__el--2{
-			animation: action-baseline-animation-hide 2s ease-out forwards;
+			animation: action-baseline-animation-hide 3s ease-out forwards;
 		}
 		.baseline__el--3{
-			animation: action-baseline-animation-show 2s ease-out forwards;
+			animation: action-baseline-animation-show 3s ease-out forwards;
 		}
 	}
 	&[baseline-anim-step="5"]{
-		animation: whole-baseline-animation reverse 0.8s ease-in forwards;  
+		animation: whole-baseline-animation reverse 1s ease-in forwards;  
 	
 		.baseline__el--3{
 			transform: translateY(-100%);

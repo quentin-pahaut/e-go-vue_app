@@ -67,7 +67,7 @@ export default {
 	&[shapes-illu-step="1"]{
 		.shapes-illustration{
 			&__bckgnds{
-				animation: illu-vertical-slide 1s ease-out forwards; 
+				animation: illu-vertical-slide 2s ease-out forwards; 
 			}
 			&__forgnds{
 				transform: translateX(-100%);
@@ -81,7 +81,7 @@ export default {
 				transform: translateX(0%);
 			}
 			&__forgnds{
-				animation: illu-horizontal-slide-1 2s ease-out forwards;
+				animation: illu-horizontal-slide-1 3s ease-out forwards;
 			}
 		}
 	}
@@ -89,7 +89,7 @@ export default {
 	&[shapes-illu-step="3"]{
 		.shapes-illustration{
 			&__bckgnds, &__forgnds{
-				animation: illu-horizontal-slide-2 2s ease-out forwards;
+				animation: illu-horizontal-slide-2 3s ease-out forwards;
 			}
 		}
 	}
@@ -97,7 +97,7 @@ export default {
 	&[shapes-illu-step="4"]{
 		.shapes-illustration{
 			&__bckgnds, &__forgnds{
-				animation: illu-horizontal-slide-3 2s ease-out forwards;
+				animation: illu-horizontal-slide-3 3s ease-out forwards;
 			}
 		}
 	}
