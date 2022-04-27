@@ -32,21 +32,39 @@ export default {
 	},
 
 	mounted(){
-		this.IntroAnimation()
+		this.introAnimation()
+	},
+
+	watch: {
+		'animationEnd':{
+			handler:'endAnimationStatus',
+			// deep:true
+		}
+		
 	},
 
 	methods: {
 
-		IntroAnimation : function(){
+		introAnimation(){
 			setTimeout (()=>{
 
 				this.animationStep++
 
 				if (this.animationStep < 5 ){
-					this.IntroAnimation()
+					this.introAnimation()
+				}else {
+					setTimeout(()=>{
+						this.animationEnd = true
+					}, 30000)
 				}
 			}, 4000)
+		},
+
+		endAnimationStatus(){
+			console.log(this.animationEnd)
+			this.$router.push('/participation')
 		}
+
 	}
 }
 </script>

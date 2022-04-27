@@ -140,15 +140,11 @@ export default {
 
 
 		@if $j == 1{
-			animation: journey-horizontal-slide 2s ease-out 2s  both
+			animation: journey-horizontal-slide 2s cubic-bezier(0.45, 0, 0.55, 1) 2s  both
 
-		}@else if $j == 2{
-
-			animation: journey-horizontal-slide 2s ease-out 6s  both
-			
 		}@else{
 
-			animation: journey-horizontal-slide 2s ease-out #{$delay}s  both
+			animation: journey-horizontal-slide 2s cubic-bezier(0.45, 0, 0.55, 1) #{$delay - 2}s  both
 			
 		}
 	}
