@@ -1,17 +1,28 @@
 <template>
-	<div>
-		<p>XP</p>
-	</div>
+	<sectionHeader />
+	<main>
+		<div>
+			<p>The bike</p>
+			<sectionIllustration />
+		</div>
+		<sectionNav />
+	</main>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
+
+import SectionHeader from '../components/sections/SectionHeader.vue'
+import SectionIllustration from '../components/sections/SectionIllustration.vue'
+import SectionNav from '../components/sections/SectionNav.vue'
 
 export default {
 	name: 'Main',
-		components: {
-		// HelloWorld
+	
+	components: {
+
+		SectionHeader,
+		SectionIllustration,
+		SectionNav
 	}
 }
 </script>

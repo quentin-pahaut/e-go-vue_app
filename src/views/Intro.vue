@@ -1,8 +1,8 @@
 <template>
 		<SectionBaseline :baselineAnimStep="animationStep"/>
 		<main class="container__main container__main--intro">
-			<SectionIllustration :shapesIlluStep="animationStep"/>
-			<SectionJourney :journeyStep="animationStep"/>
+			<SectionIllustration :shapesIlluStep="animationStep" :moveOutIllustration="animationEnd"/>
+			<SectionJourney :journeyStep="animationStep" :moveOutJourney="animationEnd"/>
 		</main>
 </template>
 
@@ -46,23 +46,33 @@ export default {
 	methods: {
 
 		introAnimation(){
-			setTimeout (()=>{
 
-				this.animationStep++
+			if (this.animationStep == 1) {
+				setTimeout (()=>{
 
-				if (this.animationStep < 5 ){
+					this.animationStep++
 					this.introAnimation()
-				}else {
-					setTimeout(()=>{
-						this.animationEnd = true
-					}, 30000)
-				}
-			}, 4000)
+				}, 2000)
+			}
+			else{
+				setTimeout (()=>{	
+					this.animationStep++
+					
+					if (this.animationStep < 5 ){
+						this.introAnimation()
+					}else {
+						setTimeout(()=>{
+							this.animationEnd = true
+						}, 30000)
+					}
+				}, 4000)
+			}
 		},
 
 		endAnimationStatus(){
-			console.log(this.animationEnd)
-			this.$router.push('/participation')
+			setTimeout(()=>{
+				this.$router.push('/participation')
+			}, 2000)
 		}
 
 	}
@@ -71,6 +81,15 @@ export default {
 
 <style lang="scss" scoped>
 
+.section--illustration[moveOutIllustration=true]{
+	transform: translateY(-50vh) ;
+	transition: 2s cubic-bezier(0.65, 0, 0.35, 1); 
+}
+.section--journey[moveOutJourney=true]{
+	transform: translateY(50vh) ; 
+	transition: 2s cubic-bezier(0.65, 0, 0.35, 1); 
+
+}
 // .container__header--intro{
 // 	&[baseline-phase-1 = "begin"]{
 // 		animation: 2s ease-in both whole-baseline-animation ;
