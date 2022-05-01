@@ -37,7 +37,10 @@ export default {
 		display:block;
 		width: 100%;
 
-		&[intro-title=true]{
+		&[intro-title="false"]{
+			margin: 9.6vw 0 auto 0;
+		}
+		&[intro-title="true"]{
 			margin: auto 0 4.5vw 0;
 		}
 	}

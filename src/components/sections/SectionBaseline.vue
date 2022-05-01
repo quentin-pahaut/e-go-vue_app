@@ -1,20 +1,17 @@
 <template>
-
-		<header class="container__header container__header--intro" :baseline-anim-step="baselineAnimStep" >
-			<p class="baseline txt--xlarge">
-				<span class="baseline__action">
-					&nbsp;
-					<span class="baseline__el baseline__el--1">I Think</span>
-					<span class="baseline__el baseline__el--2">I Measure</span>
-					<span class="baseline__el baseline__el--3">I Share</span>
-				</span>
-				<span class="my-friend-br">
-				<span class="txt--large">The Weight</span> of My</span>
-			</p>
-			<Logo intro/>
-		</header>
-
-	
+	<header class="container__header container__header--intro" :baseline-anim-step="baselineAnimStep" >
+		<p class="baseline txt--xlarge">
+			<span class="baseline__action">
+				&nbsp;
+				<span class="baseline__el baseline__el--1">I Think</span>
+				<span class="baseline__el baseline__el--2">I Measure</span>
+				<span class="baseline__el baseline__el--3">I Share</span>
+			</span>
+			<span class="my-friend-br">
+			<span class="txt--large">The Weight</span> of My</span>
+		</p>
+		<Logo intro="true"/>
+	</header>
 </template>
 
 <script>

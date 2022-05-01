@@ -82,11 +82,11 @@ export default {
 <style lang="scss" scoped>
 
 .section--illustration[moveOutIllustration=true]{
-	transform: translateY(-50vh) ;
+	transform: translateY(-100vh) ;
 	transition: 2s cubic-bezier(0.65, 0, 0.35, 1); 
 }
 .section--journey[moveOutJourney=true]{
-	transform: translateY(50vh) ; 
+	transform: translateY(100vh) ; 
 	transition: 2s cubic-bezier(0.65, 0, 0.35, 1); 
 
 }
