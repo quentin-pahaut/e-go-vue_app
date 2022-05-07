@@ -2,11 +2,9 @@
 	<section class="section section--nav">
 		<nav class="nav">
 			<ul class="nav__list">
-				<li class="nav__el"><backButton :available="buttonStatus"/></li>
-				<li class="nav__el"><nextButton :available="buttonStatus"/></li>
+				<li class="nav__el"><backButton @click.prevent="clickBack" :disable="buttonStatus"/></li>
+				<li class="nav__el"><nextButton @click.prevent="clickNext" :disable="buttonStatus"/></li>
 			</ul>
-			<!-- <button class="nav__el"></button> -->
-			
 		</nav>
 	</section>
 </template>
@@ -26,17 +24,25 @@ export default {
 	},
 	data(){
 		return {
-			buttonStatus:true,
+			buttonStatus:false,
 		}
 	},
 
+	methods:{
+		clickBack(){
+			console.log("click back")
+		},
+		clickNext(){
+			console.log("click next")
+		}
+	}
 }
 </script>
 
 <style lang="scss" scoped>
 
 .section--nav{
-	margin : 4.5vw 4.5vw 4.5vw 4.5vw;
+	margin : 4.5vw 0 0 0;
 }
 .nav{
 

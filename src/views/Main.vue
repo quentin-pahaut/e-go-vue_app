@@ -1,10 +1,8 @@
 <template>
-	<sectionHeader />
-	<main>
-		<div>
+	<sectionHeader :currentPart="part"/>
+	<main class="container__main">
 			<p>The bike</p>
-			<sectionIllustration />
-		</div>
+			<sectionIllustration :currentPart="part"/>
 		<sectionNav />
 	</main>
 </template>
@@ -23,6 +21,12 @@ export default {
 		SectionHeader,
 		SectionIllustration,
 		SectionNav
+	},
+
+	data(){
+		return {
+			part:"get-on"
+		}
 	}
 }
 </script>

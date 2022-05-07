@@ -1,19 +1,19 @@
 <template>
-	<header class="section section--header">
+	<header class="section section--header" >
 		<ul class="step-list step-list--name">
-			<li class="step-list__el step-list__el--name">I can Get</li>
-			<li class="step-list__el step-list__el--name">I authorise</li>
-			<li class="step-list__el step-list__el--name">I can Make</li>
-			<li class="step-list__el step-list__el--name">I can Pedal</li>
-			<li class="step-list__el step-list__el--name">I've gone high</li>
+			<li class="step-list__el step-list__el--name" :class="{ 'step-list__el--active': currentPart ==  'get-on'}">I can Get</li>
+			<li class="step-list__el step-list__el--name" :class="{ 'step-list__el--active': currentPart ==  'authorise'}">I authorise</li>
+			<li class="step-list__el step-list__el--name" :class="{ 'step-list__el--active': currentPart ==  'take-1'}">I can Make</li>
+			<li class="step-list__el step-list__el--name" :class="{ 'step-list__el--active': currentPart ==  'pedal-1'}">I can Pedal</li>
+			<li class="step-list__el step-list__el--name" :class="{ 'step-list__el--active': currentPart ==  'end'}">I've gone high</li>
 		</ul>
 		<Logo />
 		<ul class="step-list step-list--number">
-			<li class="step-list__el step-list__el--number">One</li>
-			<li class="step-list__el step-list__el--number">Two</li>
-			<li class="step-list__el step-list__el--number">Three</li>
-			<li class="step-list__el step-list__el--number">Four</li>
-			<li class="step-list__el step-list__el--number">Five</li>
+			<li class="step-list__el step-list__el--number" :class="{ 'step-list__el--active': currentPart ==  'get-on'}">On<span>e</span></li>
+			<li class="step-list__el step-list__el--number" :class="{ 'step-list__el--active': currentPart ==  'authorise'}">T<span>w</span>o</li>
+			<li class="step-list__el step-list__el--number" :class="{ 'step-list__el--active': currentPart ==  'take-1'}">Th<span>re</span>e</li>
+			<li class="step-list__el step-list__el--number" :class="{ 'step-list__el--active': currentPart ==  'pedal-1'}">Fo<span>u</span>r</li>
+			<li class="step-list__el step-list__el--number" :class="{ 'step-list__el--active': currentPart ==  'end'}">Five</li>
 		</ul>
 	</header>
 </template>
@@ -26,7 +26,9 @@ export default {
 
 	Name: 'SectionHeader',
 	//DATA = Variables statiques définies dans le composant
-
+	props:{
+		currentPart:String
+	},
 	components:{
 		Logo,
 	},
@@ -47,7 +49,7 @@ export default {
 .section--header{
 	display: grid;
 	grid-template-columns: 6fr 3fr 3fr;
-	margin : 4.5vw 4.5vw 0 4.5vw;
+	// margin : 4.5vw 4.5vw 0 4.5vw;
 }
 
 .step-list{
@@ -57,12 +59,21 @@ export default {
 	&--number{
 		grid-column: 3;
 	}
+
 	&__el{
 		font-size: 4.8vw;
 		font-weight: 700;
+		// line-height: 1.5;
 		color: $color-first--offset;
 		&--number{
 			text-align: right;		
+		}
+		&--active{
+			color:$color-first;
+
+			&> span{
+				color: $color-first--offset;
+			}
 		}
 	}
 }
