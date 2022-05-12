@@ -26,17 +26,16 @@ export default {
 
 	Name: 'SectionHeader',
 	//DATA = Variables statiques définies dans le composant
-	props:{
-		currentPart:String
-	},
+
 	components:{
 		Logo,
 	},
 
 	data(){
 		return {
+			currentPart : this.$store.state.appStep,
 		}
-	},
+	}
 
 }
 </script>
@@ -62,7 +61,7 @@ export default {
 
 	&__el{
 		font-size: 4.8vw;
-		font-weight: 700;
+		font-weight: 500;
 		// line-height: 1.5;
 		color: $color-first--offset;
 		&--number{
@@ -70,9 +69,11 @@ export default {
 		}
 		&--active{
 			color:$color-first;
+			font-weight: 700;
 
 			&> span{
 				color: $color-first--offset;
+				font-weight: 500;
 			}
 		}
 	}

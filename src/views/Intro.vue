@@ -1,7 +1,7 @@
 <template>
 		<SectionBaseline :baselineAnimStep="animationStep"/>
 		<main class="container__main container__main--intro">
-			<SectionIllustration :shapesIlluStep="animationStep" :moveOutIllustration="animationEnd" currentPart="intro"/>
+			<SectionIllustration :shapesIlluStep="animationStep" :moveOutIllustration="animationEnd" />
 			<SectionJourney :journeyStep="animationStep" :moveOutJourney="animationEnd"/>
 		</main>
 </template>
@@ -28,13 +28,13 @@ export default {
 			animationStep:1,
 			animationEnd:false,
 			test:0,
-			currentPart:""
+
 		}
 	},
 
 	mounted(){
-		this.introAnimation(),
-		this.setCurrentPart()
+		this.introAnimation()
+		// this.setCurrentPart()
 	},
 
 	watch: {
@@ -74,15 +74,16 @@ export default {
 		endAnimationStatus(){
 			setTimeout(()=>{
 				this.$router.push('/participation')
+				this.$store.commit('nextStep')
 			}, 2000)
 		},
 
-		setCurrentPart(){
-			let container = document.getElementById('app')
-			container.setAttribute('current-part', 'intro')
-			this.currentPart = 'intro'
-			console.log(this.currentPart)
-		}
+		// setCurrentPart(){
+		// 	let container = document.getElementById('app')
+		// 	container.setAttribute('current-part', 'intro')
+		// 	this.currentPart = 'intro'
+		// 	console.log(this.currentPart)
+		// }
 	}
 }
 </script>

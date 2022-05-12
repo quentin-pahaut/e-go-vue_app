@@ -31,9 +31,13 @@ export default {
 	methods:{
 		clickBack(){
 			console.log("click back")
+			this.$store.commit('previousStep')
+			console.log(this.$store.state.appStep)
 		},
 		clickNext(){
 			console.log("click next")
+			this.$store.commit('nextStep')
+			console.log(this.$store.state.appStep)
 		}
 	}
 }

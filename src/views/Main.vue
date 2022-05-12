@@ -2,7 +2,7 @@
 	<sectionHeader :currentPart="part"/>
 	<main class="container__main">
 			<p>The bike</p>
-			<sectionIllustration :currentPart="part"/>
+			<sectionIllustration />
 		<sectionNav />
 	</main>
 </template>
@@ -25,7 +25,7 @@ export default {
 
 	data(){
 		return {
-			part:"get-on"
+
 		}
 	}
 }

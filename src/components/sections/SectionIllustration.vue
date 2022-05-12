@@ -18,7 +18,7 @@ export default {
 	//DATA = Variables statiques définies dans le composant
 	props:{
 		shapesIlluStep:Number,
-		currentPart:String
+		// currentPart:String
 	},
 	components: {
 		ShapesIllustration,
@@ -26,7 +26,7 @@ export default {
 
 	data(){
 		return {
-			// part:"intro"
+			currentPart : this.$store.state.appStep,
 		}
 	},
 
