@@ -29,7 +29,10 @@ export default {
 			currentPart : this.$store.state.appStep,
 		}
 	},
-
+	
+	methods:{
+		
+	}
 
 }
 </script>

@@ -27,7 +27,7 @@ export default {
 	Name: 'SectionHeader',
 	//DATA = Variables statiques définies dans le composant
 
-	components:{
+	components:{ 
 		Logo,
 	},
 
