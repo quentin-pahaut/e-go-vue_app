@@ -18,7 +18,7 @@ let step = 0
 export default createStore({
 	state() {
 		return {
-			appStep: appSteps[step]
+			appStep: appSteps[step],
 		}
 	},
 	mutations: {
@@ -32,7 +32,9 @@ export default createStore({
 		},
 	},
 	actions: {
+
 	},
 	modules: {
+
 	}
 })

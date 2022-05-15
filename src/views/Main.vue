@@ -1,9 +1,9 @@
 <template>
-	<sectionHeader :currentPart="part"/>
+	<sectionHeader />
 	<main class="container__main">
 		<p>The bike</p>
 		<sectionIllustration />
-		<sectionNav @click.prevent="reRender"/>
+		<sectionNav/>
 		<!-- @click.prevent="reRender" -->
 	</main>
 </template>
@@ -37,9 +37,9 @@ export default {
 	},
 
 	methods:{
-		reRender(){
+		reRender(value){
 			this.$forceUpdate()
-			console.log("Step change")
+			console.log(value)
 		},
 
 	}

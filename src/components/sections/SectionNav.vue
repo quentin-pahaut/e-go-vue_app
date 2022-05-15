@@ -34,13 +34,13 @@ export default {
 			console.log("click back")
 			this.$store.commit('previousStep')
 			console.log(this.$store.state.appStep)
-			// this.$emit(this.currentPart)
+
 		},
 		clickNext(){
 			console.log("click next")
 			this.$store.commit('nextStep')
 			console.log(this.$store.state.appStep)
-			// this.$emit(this.currentPart)
+
 		}
 	}
 }
